@@ -27,3 +27,6 @@ Other:
 
 Windows: [Latest version](https://drive.google.com/drive/folders/1dsUAQcBWZsIowS-Cqgtue_KCGfUDdohP?usp=sharing).
 
+## Screenshot
+
+![A-maze](https://drive.google.com/file/d/1dWau1dLcFOjtdT44tvLGWSxMK-gjMxC9/view?usp=sharing)
