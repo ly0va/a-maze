@@ -9,6 +9,7 @@ you = Player(1, maze)
 me = Player(2, maze)
 x = m*scl + 2*border
 y = n*scl + 2*border
+toggles = {'f': False, 'c': False, 'p': False}
 
 def setup():
     size(x, y)
@@ -23,16 +24,22 @@ def draw():
         maze.show()
     else:
         background(bg)
-        if key == 'p':
-            maze.showPath()
-        if key == 'f':
+        if toggles['f']:
             maze.floodFill()
+        if toggles['c']:
+            maze.showPath()
+        if toggles['p']:
+            you.showPath()
+            me.showPath()
         showGame()
 
 def keyPressed():
-    
-    if not maze.ready: return
-    if key == 'R': restart()
+    if not maze.ready: 
+        return
+    if key == 'R': 
+        restart()
+    if key in toggles: 
+        toggles[key] = not toggles[key]
     if not Player.gameOver:
         you.move(keyCode)
         me.move(keyCode)
@@ -40,9 +47,6 @@ def keyPressed():
 def showGame():
     you.showDest()
     me.showDest()
-    # if not set(you.path) & set(me.path):
-    #     you.showPath()
-    #     me.showPath()
     you.show()
     me.show()
     you.winner()
@@ -52,7 +56,7 @@ def showGame():
 def generate():
     a = algo
     if a is None:
-        while key not in {'1', '2', '3', '4', '5'}: sleep(1)
+        while key not in "12345": sleep(1)
         algos = ['dfs', 'kruskal', 'prim', 'wilson', 'division']
         a = algos[int(key)-1]
     getattr(maze, a)()
