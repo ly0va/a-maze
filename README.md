@@ -2,14 +2,14 @@
 
 Playing with various maze-generating algorithms in Processing.py.
 
-##Implemented algorithms:
+## Implemented algorithms:
 1. Randomized depth-first search 
 2. Randomized Kruskal's algorithm
 3. Randomized Prim's algorithm
 4. Wilson's algorithm
 5. Recursive division
 
-##Usage
+## Usage
 
 The game is completely keyboard-driven. After launch, press one of the digits keys (`1`-`5`) to select the algorithm.
 
@@ -23,7 +23,7 @@ Other:
 - `P` - toggle players' paths
 - `F` - toggle floodfill
 
-##Download
+## Download
 
-Windows: [Latest version]().
+Windows: [Latest version](https://drive.google.com/drive/folders/1dsUAQcBWZsIowS-Cqgtue_KCGfUDdohP?usp=sharing).
 
