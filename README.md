@@ -11,7 +11,7 @@ Playing with various maze-generating algorithms in Processing.py.
 
 ## Usage
 
-The game is completely keyboard-driven. After launch, press one of the digits keys (`1`-`5`) to select the algorithm.
+Each player's goal is to get to the opposite corner of the maze. The game is completely keyboard-driven. After launch, press one of the digits keys (`1`-`5`) to select the algorithm.
 
 Player 1 controls: `W/A/S/D`
 
