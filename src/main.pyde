@@ -1,3 +1,4 @@
+# vim: ft=python
 from threading import Thread
 from time import sleep
 from player import Player
@@ -56,7 +57,7 @@ def showGame():
 def generate():
     a = algo
     if a is None:
-        while key not in "12345": sleep(1)
+        while str(key) not in "12345": sleep(1)
         algos = ['dfs', 'kruskal', 'prim', 'wilson', 'division']
         a = algos[int(key)-1]
     getattr(maze, a)()
