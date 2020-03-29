@@ -12,10 +12,12 @@ Playing with various maze-generating algorithms in Processing.py.
 
 ## Installation
 
+Dependencies: `java`
+
 ```bash
 git clone https://github.com/lyova-potyomkin/a-maze.git
 cd a-maze
-./install.sh
+./install.sh              # downloads processing-py.jar
 ```
 
 ## Usage
