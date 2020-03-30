@@ -12,13 +12,17 @@ Playing with various maze-generating algorithms in Processing.py.
 
 ## Installation
 
-Dependencies: `java`
+Dependencies: `java >= 1.8`, older versions may also work.
+
+**Linux** and **Mac**:
 
 ```bash
 git clone https://github.com/lyova-potyomkin/a-maze.git
 cd a-maze
 ./install.sh              # downloads processing-py.jar
 ```
+
+For **Windows**, you should run it using [Processing IDE](https://processing.org/download/).
 
 ## Usage
 
