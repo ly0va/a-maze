@@ -1,9 +1,9 @@
 from cell import *
 
 class Player(object):
-    
+
     gameOver = False
-    
+
     def __init__(self, id, maze):
         self.maze = maze
         if id == 1:
@@ -19,11 +19,11 @@ class Player(object):
             self.label = "Blue wins!"
             self.destination = [0, 0]
         i, j = self.pos
-        self.spos = (border + j*scl + scl/2, 
+        self.spos = (border + j*scl + scl/2,
                      border + i*scl + scl/2)
         self.path = [tuple(self.pos)]
         self.pathFlag = True
-        
+
     def show(self):
         fill(self.clr)
         stroke(255)
@@ -36,7 +36,7 @@ class Player(object):
         y = lerp(py, sy, smoothness)
         self.spos = (x, y)
         ellipse(x, y, scl/2, scl/2)
-        
+
     def showDest(self):
         fill(self.clr)
         noStroke()
@@ -44,7 +44,7 @@ class Player(object):
         x = border + j*scl
         y = border + i*scl
         rect(x+1, y+1, scl-1, scl-1)
-    
+
     def showPath(self):
         stroke(self.clr, 200)
         strokeWeight(scl/4)
@@ -58,7 +58,7 @@ class Player(object):
         vertex(*self.spos)
         endShape()
         strokeWeight(1)
-        
+
     def move(self, dir):
         i, j = self.pos
         for k in range(4):
@@ -71,13 +71,13 @@ class Player(object):
                     self.path.pop()
                 else:
                     self.path.append(pos)
-         
+
     def winner(self):
         if self.pos == self.destination:
             fill(self.clr)
             text(self.label, width/2, border/2)
             Player.gameOver = True
-        
+
     @staticmethod
     def overlap(one, two):
         eps = 1

@@ -3,16 +3,16 @@ from algorithms import *
 from cell import *
 
 class Maze(object):
-    
+
     def __init__(self):
         self.it = [[Cell() for j in range(m)] for i in range(n)]
         self.path = []
         self.ready = False
         self.maxDepth = 0
-        
+
     def __getitem__(self, index):
         return self.it[index]
-    
+
     def show(self):
         stroke(255)
         x = y = border
@@ -22,7 +22,7 @@ class Maze(object):
                 x += scl
             y += scl
             x = border
-            
+
     def showPath(self):
         stroke(255, 0, 255)
         strokeWeight(scl/4)
@@ -34,7 +34,7 @@ class Maze(object):
             vertex(x, y)
         endShape()
         strokeWeight(1)
-    
+
     def neighbors(self, cell):
         neigh = []
         i, j = cell
@@ -44,7 +44,7 @@ class Maze(object):
             if conds[k] and not self[i+iinc][j+jinc].visited:
                 neigh.append((i+iinc, j+jinc))
         return neigh
-    
+
     def adjacent(self, cell):
         adj = []
         i, j = cell
@@ -54,7 +54,7 @@ class Maze(object):
             if not walls[k] and self[i+iinc][j+jinc].visited:
                 adj.append((i+iinc, j+jinc))
         return adj
-    
+
     def destroyWall(self, cell1, cell2):
         i1, j1 = cell1
         i2, j2 = cell2
@@ -66,8 +66,8 @@ class Maze(object):
             w = int(i1 < i2)
             self[i1][j1].walls[2+w] = 0
             self[i2][j2].walls[3-w] = 0
-        sleep(delay)    
-    
+        sleep(delay)
+
     def findPath(self):
         for i in range(n):
             for j in range(m):
@@ -86,7 +86,7 @@ class Maze(object):
                 stack.pop()
             if not self.path and stack[-1] == (n-1, m-1):
                 self.path = stack[:]
-        
+
     def floodFill(self):
         noStroke()
         for i in range(n):
@@ -96,10 +96,9 @@ class Maze(object):
                 x = border + j*scl
                 y = border + i*scl
                 rect(x+1, y+1, scl-1, scl-1)
-                    
+
     dfs = dfs
     kruskal = kruskal
     prim = prim
     wilson = wilson
     division = division
-        

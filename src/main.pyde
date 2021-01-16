@@ -35,16 +35,16 @@ def draw():
         showGame()
 
 def keyPressed():
-    if not maze.ready: 
+    if not maze.ready:
         return
-    if key == 'R': 
+    if key == 'R':
         restart()
-    if key in toggles: 
+    if key in toggles:
         toggles[key] = not toggles[key]
     if not Player.gameOver:
         you.move(keyCode)
         me.move(keyCode)
-    
+
 def showGame():
     you.showDest()
     me.showDest()
@@ -53,7 +53,7 @@ def showGame():
     you.winner()
     me.winner()
     Player.overlap(you, me)
-    
+
 def generate():
     a = algo
     if a is None:
@@ -64,7 +64,7 @@ def generate():
     maze.findPath()
     getBackground()
     maze.ready = True
-    
+
 def getBackground():
     global bg
     noLoop()
@@ -72,7 +72,7 @@ def getBackground():
     sleep(0.2)
     bg = copy()
     loop()
-    
+
 def restart():
     global maze, you, me
     maze = Maze()

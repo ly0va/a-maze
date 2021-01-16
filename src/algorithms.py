@@ -2,10 +2,10 @@ from random import randint, choice
 from cell import n, m
 
 class DSU:
-    
+
     def __init__(self):
         self.parent = {}
-        
+
     def findRoot(self, v):
         parent = self.parent
         if v not in parent:
@@ -13,17 +13,17 @@ class DSU:
         else:
             parent[v] = self.findRoot(parent[v])
             return parent[v]
-        
+
     def unite(self, u, v):
         u = self.findRoot(u)
         v = self.findRoot(v)
         if u != v:
             self.parent[u] = v
-        
+
     def together(self, u, v):
         return self.findRoot(u) == self.findRoot(v)
 
-            
+
 def dfs(self):
     first = (randint(0, n-1), randint(0, m-1))
     stack = [first]
@@ -37,7 +37,7 @@ def dfs(self):
             self.destroyWall(current, neigh)
         else:
             stack.pop()
-            
+
 def prim(self):
     i, j = first = randint(0, n-1), randint(0, m-1)
     self[i][j].visited = True
@@ -52,7 +52,7 @@ def prim(self):
             tree.append(v)
         else:
             tree.remove(u)
-    
+
 def kruskal(self):
     dsu = DSU()
     edges = 0
@@ -63,7 +63,7 @@ def kruskal(self):
             dsu.unite(u, v)
             self.destroyWall(u, v)
             edges += 1
-            
+
 def wilson(self):
     first = randint(0, n-1), randint(0, m-1)
     tree = {first}
@@ -84,8 +84,8 @@ def wilson(self):
             u = stack[i]
             v = stack[i+1]
             self.destroyWall(u, v)
-        tree.update(stack)      
-    
+        tree.update(stack)
+
 def division(self):
     def _divide(y, x, h, w):
         if w == h == 1: return

@@ -4,7 +4,7 @@ Playing with various maze-generating algorithms in Processing.py.
 
 ## Implemented algorithms
 
-1. Randomized depth-first search 
+1. Randomized depth-first search
 2. Randomized Kruskal's algorithm
 3. Randomized Prim's algorithm
 4. Wilson's algorithm
@@ -17,7 +17,7 @@ Dependencies: `java >= 1.8`, older versions may also work.
 **Linux** and **Mac**:
 
 ```bash
-git clone https://github.com/lyova-potyomkin/a-maze.git
+git clone https://github.com/ly0va/a-maze.git
 cd a-maze
 ./install.sh              # downloads processing-py.jar
 ```
